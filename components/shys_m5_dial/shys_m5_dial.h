@@ -240,6 +240,8 @@ namespace esphome
         using std::placeholders::_1;
         using std::placeholders::_2;
 
+        M5Dial.Display.setRotation(2);
+
         ESP_LOGI("DEVICE", "Initialisierung...");
 
         auto cfg = M5.config();
