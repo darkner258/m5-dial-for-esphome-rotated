@@ -246,7 +246,7 @@ namespace esphome
         auto cfg = M5.config();
         M5Dial.begin(cfg, enableEncoder, enableRFID);
 
-        M5Dial.Display.setRotation(3);
+        M5Dial.Display.setRotation(0);
         
         ESP_LOGI("DEVICE", "Register Callbacks...");
         m5DialRotary->on_rotary_left(std::bind(&esphome::shys_m5_dial::ShysM5Dial::turnRotaryLeft, this));
