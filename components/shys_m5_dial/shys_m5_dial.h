@@ -246,7 +246,8 @@ namespace esphome
         auto cfg = M5.config();
         M5Dial.begin(cfg, enableEncoder, enableRFID);
 
-
+        M5Dial.Display.setRotation(2);
+        
         ESP_LOGI("DEVICE", "Register Callbacks...");
         m5DialRotary->on_rotary_left(std::bind(&esphome::shys_m5_dial::ShysM5Dial::turnRotaryLeft, this));
         m5DialRotary->on_rotary_right(std::bind(&esphome::shys_m5_dial::ShysM5Dial::turnRotaryRight, this));
@@ -256,7 +257,6 @@ namespace esphome
         m5DialTouch->on_touch(std::bind(&esphome::shys_m5_dial::ShysM5Dial::touchInput, this, _1, _2));
         m5DialTouch->on_swipe(std::bind(&esphome::shys_m5_dial::ShysM5Dial::touchSwipe, this, _1));
         
-        M5Dial.Display.setRotation(2);
         
         this->registerServices();
       }
