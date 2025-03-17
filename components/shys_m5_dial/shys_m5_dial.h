@@ -240,12 +240,13 @@ namespace esphome
         using std::placeholders::_1;
         using std::placeholders::_2;
 
-        M5Dial.Display.setRotation(2);
 
         ESP_LOGI("DEVICE", "Initialisierung...");
 
         auto cfg = M5.config();
         M5Dial.begin(cfg, enableEncoder, enableRFID);
+
+        M5Dial.Display.setRotation(2);
 
         ESP_LOGI("DEVICE", "Register Callbacks...");
         m5DialRotary->on_rotary_left(std::bind(&esphome::shys_m5_dial::ShysM5Dial::turnRotaryLeft, this));
