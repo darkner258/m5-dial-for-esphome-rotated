@@ -58,7 +58,7 @@ namespace esphome
                             ESP_LOGI("DISPLAY", "Sleep after %d ms", timeToScreenOff);
                         }
                     } else if ( M5Dial.Display.getBrightness()<=0 ) {
-                        M5Dial.Display.setBrightness(50);
+                        M5Dial.Display.setBrightness(40);
                         ESP_LOGI("DISPLAY", "Display on");
                     }
                 }
