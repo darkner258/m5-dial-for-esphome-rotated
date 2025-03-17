@@ -334,7 +334,6 @@ namespace esphome
       */
       void turnRotaryLeft(){
         m5DialDisplay->resetLastEventTimer();
-        M5Dial.Speaker.tone(5000, 1);
 
         if(m5DialDisplay->isDisplayOn()){
           devices[currentDevice]->onRotary(*m5DialDisplay, ROTARY_LEFT);
